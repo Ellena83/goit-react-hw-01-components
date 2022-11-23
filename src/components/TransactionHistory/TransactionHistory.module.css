@@ -1,0 +1,23 @@
+.transactionHistory {
+  width: 50%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.thead {
+  /* background-color: #4FD5E5; */
+  color: #fff;
+  height: 45px;
+  background: linear-gradient(to top right, #def, #4fd5e5);
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.column {
+  text-align: center;
+  height: 45px;
+  color: #808080;
+}
