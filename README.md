@@ -1,91 +1,39 @@
-**Read in other languages: [Русский](README.md), [Polska](README.pl.md),
-[English](README.en.md), [Spanish](README.es.md).**
+# goit-react-hw-01-components
 
-# React homework template
+The `goit-react-hw-01-components` repository has been created.
+The components of all tasks are rendered on the same page, inside a common container - the root `<App>` component.
+Each component has a separate folder with a React component file and a stylesheet.
+For all components propTypes are described.
+Everything that the component expects in the form of props is passed to it when it is called.
+Styling is done by CSS Modules.
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+## 1 - Social network profile
 
-## Подготовка нового проекта
+The `Profile` component has been created, with the help of which we can display information about a user of a social network. User data is stored in the `user.json` file.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Клонируй этот репозиторий.
-3. Измени имя папки с `react-homework-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи базовые зависимости проекта командой `npm install`.
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+![](https://textbook.edu.goit.global/lms-react-homework/v1/img/hw-01/social-profile.png)
 
-## Деплой
+## 2- Statistics Section
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+A `Statistics` component has been created that displays statistics on transmitted props.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+The statistics data is in the `data.json` file.
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+![](https://textbook.edu.goit.global/lms-react-homework/v1/img/hw-01/statistics.jpg)
 
-![GitHub Pages settings](./assets/repo-settings.png)
+## 3 - List of friends 
+The `FriendList` component has been created, with the help of which we can display information about the user's friends. Friends information is stored in the `friends.json` file.
 
-### Статус деплоя
+![](https://textbook.edu.goit.global/lms-react-homework/v1/img/hw-01/friend-list.jpg)
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+## 4 - Transaction History
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+A `transaction history` component has been created in the personal account of the Internet Bank
+The data for the list is available in JSON format in the transactions.json file. This is an array of objects, where each object describes one transaction with the following properties:
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+- `id` - unique transaction ID
+- `type` — transaction type
+- `amount` - transaction amount
+- `currency` - currency type
 
-![Deployment status](./assets/status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеши в начале и конце строки
-обязательны.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+![](https://textbook.edu.goit.global/lms-react-homework/v1/img/hw-01/transactions.jpg)
